@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #fffbcc;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 500px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: red;
+        }
+        p {
+            font-size: 18px;
+        }
+        button {
+            background-color: red;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Hey <span id="name"></span>, I'm Really Sorry! 😔</h1>
+    <p>I know I messed up, and I truly regret it. Please forgive me? 💖</p>
+    <button onclick="forgiveMe()">Forgive Me?</button>
+    <p id="response"></p>
+</div>
+
+<script>
+    function getNameFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get("name") || "Friend";
+    }
+
+    document.getElementById("name").innerText = getNameFromURL();
+
+    function forgiveMe() {
+        document.getElementById("response").innerHTML = "Yay! You're the best! 🎉💖";
+    }
+</script>
+
+</body>
+</html>
